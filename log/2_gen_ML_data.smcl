@@ -1,0 +1,246 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\2_gen_ML_data.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}30 Jun 2023, 23:47:25
+{txt}
+{com}. use "${c -(}rdata{c )-}\mu1991to2020.dta", clear
+{txt}
+{com}. 
+. * 1997、2007 年最低工資改變，使用 1998 - 2007 的數據來做 Train
+. drop if year < 1998 | year > 2007
+{txt}(1,149,019 observations deleted)
+
+{com}. 
+. * no observation
+. drop kid611
+{txt}
+{com}. drop kid1214
+{txt}
+{com}. 
+. * 去掉沒有工資或虧損的人
+. drop if earn  == 0 | earn  == 1
+{txt}(310,172 observations deleted)
+
+{com}. * 去掉最高薪
+. drop if earn == 999999
+{txt}(31 observations deleted)
+
+{com}. * 刪除工時為0但月薪為正的人 以及 月薪為正但工時為0的人
+. drop if hour == 0 & earn > 0
+{txt}(1,743 observations deleted)
+
+{com}. drop if earn == 0 & hour > 0
+{txt}(0 observations deleted)
+
+{com}. 
+. * 剃除 >65 and <15
+. drop if age > 65 | age < 15
+{txt}(4,765 observations deleted)
+
+{com}. 
+. * 受私人、政府僱用
+. keep if stat1 == 3 | stat1 == 4
+{txt}(64,407 observations deleted)
+
+{com}. 
+. * 更改性別編號女為0、男性為1
+. gen gender = 0 if sex == 2
+{txt}(125,820 missing values generated)
+
+{com}. replace gender = 1 if sex == 1
+{txt}(125,820 real changes made)
+
+{com}. 
+. 
+. * 刪除工時大於周時數168
+. drop if hour > 168
+{txt}(1 observation deleted)
+
+{com}. 
+. * 教育變數
+. tabulate edu, generate(edu)
+
+                       {txt}教育程度 {c |}      Freq.     Percent        Cum.
+{hline 32}{c +}{hline 35}
+                    不識字(轉7) {c |}{res}      1,542        0.70        0.70
+{txt}                      自修(轉7) {c |}{res}        281        0.13        0.83
+{txt}                      國小(轉7) {c |}{res}     23,002       10.50       11.33
+{txt}                  國(初)中(轉7) {c |}{res}     36,791       16.80       28.13
+{txt}    高級中等(高中、高職)(轉5-4) {c |}{res}     80,074       36.56       64.69
+{txt}專科(五專前三年劃記高職)(接5-4) {c |}{res}     39,017       17.81       82.51
+{txt}                    大學(接5-4) {c |}{res}     31,302       14.29       96.80
+{txt}                    碩士(接5-4) {c |}{res}      5,953        2.72       99.52
+{txt}                    博士(接5-4) {c |}{res}      1,053        0.48      100.00
+{txt}{hline 32}{c +}{hline 35}
+                          Total {c |}{res}    219,015      100.00
+{txt}
+{com}. 
+. * 婚姻變數
+. tabulate mar, generate(mar)
+
+          {txt}婚姻狀況 {c |}      Freq.     Percent        Cum.
+{hline 19}{c +}{hline 35}
+              未婚 {c |}{res}     80,417       36.72       36.72
+{txt}有配偶(含與人同居) {c |}{res}    127,331       58.14       94.86
+{txt}        離婚、分居 {c |}{res}      7,749        3.54       98.39
+{txt}          配偶死亡 {c |}{res}      3,518        1.61      100.00
+{txt}{hline 19}{c +}{hline 35}
+             Total {c |}{res}    219,015      100.00
+{txt}
+{com}. 
+. * 工作變數
+. tabulate work, generate(work)
+
+                   {txt}上週你有沒有在做工作 {c |}      Freq.     Percent        Cum.
+{hline 40}{c +}{hline 35}
+                     從事某種工作(轉10) {c |}{res}    217,030       99.09       99.09
+{txt}               利用課餘或假期工作(轉10) {c |}{res}      1,016        0.46       99.56
+{txt}                 家事餘暇從事工作(轉10) {c |}{res}        969        0.44      100.00
+{txt}{hline 40}{c +}{hline 35}
+                                  Total {c |}{res}    219,015      100.00
+{txt}
+{com}. 
+. * 縣市變數
+. tabulate county, generate(county)
+
+          {txt}縣市代號 {c |}      Freq.     Percent        Cum.
+{hline 19}{c +}{hline 35}
+            宜蘭縣 {c |}{res}      6,419        2.93        2.93
+{txt}            新竹縣 {c |}{res}      5,743        2.62        5.55
+{txt}            苗栗縣 {c |}{res}      7,572        3.46        9.01
+{txt}            彰化縣 {c |}{res}     11,536        5.27       14.28
+{txt}            南投縣 {c |}{res}      6,033        2.75       17.03
+{txt}            雲林縣 {c |}{res}      8,063        3.68       20.71
+{txt}            嘉義縣 {c |}{res}      6,319        2.89       23.60
+{txt}            屏東縣 {c |}{res}     10,024        4.58       28.18
+{txt}            臺東縣 {c |}{res}      4,171        1.90       30.08
+{txt}            花蓮縣 {c |}{res}      4,902        2.24       32.32
+{txt}            澎湖縣 {c |}{res}      2,241        1.02       33.34
+{txt}            基隆市 {c |}{res}      5,539        2.53       35.87
+{txt}            新竹市 {c |}{res}      6,914        3.16       39.03
+{txt}            嘉義市 {c |}{res}      4,382        2.00       41.03
+{txt}            臺北市 {c |}{res}     20,382        9.31       50.33
+{txt}            高雄市 {c |}{res}     25,144       11.48       61.81
+{txt}            新北市 {c |}{res}     26,633       12.16       73.98
+{txt}            臺中市 {c |}{res}     21,748        9.93       83.91
+{txt}            臺南市 {c |}{res}     20,149        9.20       93.11
+{txt}            桃園市 {c |}{res}     15,101        6.89      100.00
+{txt}{hline 19}{c +}{hline 35}
+             Total {c |}{res}    219,015      100.00
+{txt}
+{com}. 
+. * 科系變數
+. tab major, generate(major)
+
+          {txt}科系 {c |}      Freq.     Percent        Cum.
+{hline 15}{c +}{hline 35}
+  跳答或不適用 {c |}{res}     82,146       37.51       37.51
+{txt}            文 {c |}{res}      5,867        2.68       40.19
+{txt}            法 {c |}{res}      1,617        0.74       40.92
+{txt}商、管理、傳播 {c |}{res}     50,233       22.94       63.86
+{txt}            理 {c |}{res}      2,117        0.97       64.83
+{txt}            工 {c |}{res}     53,917       24.62       89.44
+{txt}            農 {c |}{res}      4,088        1.87       91.31
+{txt}            醫 {c |}{res}      6,496        2.97       94.28
+{txt}          軍警 {c |}{res}      2,946        1.35       95.62
+{txt}          教育 {c |}{res}      4,460        2.04       97.66
+{txt}          民生 {c |}{res}      5,128        2.34      100.00
+{txt}{hline 15}{c +}{hline 35}
+         Total {c |}{res}    219,015      100.00
+{txt}
+{com}. 
+. * 家庭地位
+. tabulate rel, generate(rel)
+
+      {txt}與戶長之 {c |}
+          關係 {c |}      Freq.     Percent        Cum.
+{hline 15}{c +}{hline 35}
+          戶長 {c |}{res}     69,830       31.88       31.88
+{txt}          配偶 {c |}{res}     38,667       17.65       49.54
+{txt}          子女 {c |}{res}     86,344       39.42       88.96
+{txt}        孫子女 {c |}{res}      4,179        1.91       90.87
+{txt}          父母 {c |}{res}      1,110        0.51       91.38
+{txt}        祖父母 {c |}{res}          1        0.00       91.38
+{txt}      兄弟姊妹 {c |}{res}      5,454        2.49       93.87
+{txt}    子女之配偶 {c |}{res}     11,246        5.13       99.00
+{txt}  孫子女之配偶 {c |}{res}        241        0.11       99.11
+{txt}兄弟姊妹之配偶 {c |}{res}        556        0.25       99.37
+{txt}    配偶之父母 {c |}{res}         27        0.01       99.38
+{txt}配偶之兄弟姊妹 {c |}{res}        247        0.11       99.49
+{txt}      其他親屬 {c |}{res}        887        0.40       99.90
+{txt}          其他 {c |}{res}        226        0.10      100.00
+{txt}{hline 15}{c +}{hline 35}
+         Total {c |}{res}    219,015      100.00
+{txt}
+{com}. 
+. * 更改婚姻狀況 未婚1；離婚、分居3；配偶死亡4；有配偶(含與人同居)2
+. gen marital = 0 if mar == 1 | mar == 3 | mar == 4
+{txt}(127,331 missing values generated)
+
+{com}. replace marital = 1 if mar == 2
+{txt}(127,331 real changes made)
+
+{com}. 
+. * 是否住臺北：63
+. gen taipei = 0
+{txt}
+{com}. replace taipei = 1 if county == 63
+{txt}(20,382 real changes made)
+
+{com}. 
+. * 時薪 = 工資/工時
+. gen earn_hr = earn/(hour*4)
+{txt}
+{com}. gen earn_ad_hr = earn_ad/(hour*4)
+{txt}
+{com}. /*
+> * 2007年修改最低工資為 95 ，視低於125%的人為實驗組
+> gen treat_sec = 0
+> replace treat_sec = 1 if earn_hr >= 95*1.25 & earn_hr < 95*1.75
+> replace treat_sec = 2 if earn_hr >= 95*1.75
+> 
+> gen treat_fir = 0
+> replace treat_fir = 1 if earn_hr >= 95*1.75
+> */
+. 
+. * 2007年修改最低工資為 17280 ，視低於125%的人為實驗組
+. gen treat = 0
+{txt}
+{com}. replace treat = 1 if earn >= 17280*1.2 & earn < 17280*2
+{txt}(89,607 real changes made)
+
+{com}. replace treat = 2 if earn >= 17280*2
+{txt}(82,424 real changes made)
+
+{com}. 
+. 
+. 
+. * 篩選變數
+. keep year age gender edu* eduyr taipei marital kid* work* rel* mar* county* major* earn earn_ad earn_hr earn_ad_hr hour treat*
+{txt}
+{com}. 
+. label drop _all
+{txt}
+{com}. save "${c -(}wdata{c )-}\mu_ML", replace
+{txt}{p 0 4 2}
+(file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\wdata\mu_ML.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\wdata\mu_ML.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\2_gen_ML_data.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}30 Jun 2023, 23:47:28
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

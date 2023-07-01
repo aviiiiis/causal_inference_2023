@@ -1,0 +1,82 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\1_clean_data_98-10.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}30 Jun 2023, 23:47:18
+{txt}
+{com}. use "${c -(}rdata{c )-}\mu1991to2020.dta", clear
+{txt}
+{com}. label values earn
+{txt}
+{com}. 
+. * 1997、2007 年最低工資改變，使用 2000 - 2007 的數據來做 Train
+. drop if year < 1998 | year > 2010
+{txt}(975,298 observations deleted)
+
+{com}. 
+. * 更改性別編號女為0
+. gen gender = 0 if sex == 2
+{txt}(395,684 missing values generated)
+
+{com}. replace gender = 1 if sex == 1
+{txt}(395,684 real changes made)
+
+{com}. * 更改婚姻狀況 未婚1：0、離婚、分居3：0、配偶死亡4:0、有配偶(含與人同居)2：1
+. gen marital = 0 if mar == 1 | mar == 3 | mar == 4
+{txt}(449,158 missing values generated)
+
+{com}. replace marital = 1 if mar == 2
+{txt}(449,158 real changes made)
+
+{com}. 
+. 
+. * 是否住臺北：63
+. gen taipei = 0
+{txt}
+{com}. replace taipei = 1 if county == 63
+{txt}(69,791 real changes made)
+
+{com}. 
+. * 薪資/工時
+. replace earn = 0 if earn == 1
+{txt}(653 real changes made)
+
+{com}. gen earn_hr = earn/(hour*4)
+{txt}(372,642 missing values generated)
+
+{com}. replace earn_hr = 0 if earn_hr == .
+{txt}(372,642 real changes made)
+
+{com}. gen earn_ad_hr = earn_ad/(hour*4)
+{txt}(372,642 missing values generated)
+
+{com}. replace earn_ad_hr = 0 if earn_ad_hr == .
+{txt}(372,642 real changes made)
+
+{com}. 
+. * 篩選變數
+. keep year taipei age gender marital edu eduyr kid hour earn earn_ad earn_hr earn_ad_hr
+{txt}
+{com}. 
+. 
+. save "${c -(}wdata{c )-}\mu_98-10", replace
+{txt}{p 0 4 2}
+(file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\wdata\mu_98-10.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\wdata\mu_98-10.dta{rm}
+saved
+{p_end}
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\1_clean_data_98-10.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}30 Jun 2023, 23:47:20
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

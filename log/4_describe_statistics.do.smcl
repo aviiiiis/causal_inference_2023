@@ -1,0 +1,205 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\4_describe_statistics.do.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 1 Jul 2023, 16:23:35
+{txt}
+{com}. clear all
+{res}{txt}
+{com}. 
+. use "${c -(}wdata{c )-}\mu_98-10", clear
+{txt}
+{com}. estpost summarize age gender eduyr kid marital taipei hour earn_ad, detail
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: 42.76654}}}{space 1}{space 1}{ralign 9:{res:{sf: 324.3983}}}{space 1}{space 1}{ralign 9:{res:{sf: 18.01106}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: .5113154}}}{space 1}{space 1}{ralign 9:{res:{sf: .2498723}}}{space 1}{space 1}{ralign 9:{res:{sf: .4998723}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: 10.22985}}}{space 1}{space 1}{ralign 9:{res:{sf: 20.38777}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.515282}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: .7531618}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.991457}}}{space 1}{space 1}{ralign 9:{res:{sf:  1.41119}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: .5804162}}}{space 1}{space 1}{ralign 9:{res:{sf: .2435335}}}{space 1}{space 1}{ralign 9:{res:{sf: .4934912}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: .0901861}}}{space 1}{space 1}{ralign 9:{res:{sf: .0820527}}}{space 1}{space 1}{ralign 9:{res:{sf: .2864484}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: 23.39932}}}{space 1}{space 1}{ralign 9:{res:{sf: 554.2222}}}{space 1}{space 1}{ralign 9:{res:{sf: 23.54192}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf:   773855}}}{space 1}{space 1}{ralign 9:{res:{sf: 18816.11}}}{space 1}{space 1}{ralign 9:{res:{sf: 7.61e+08}}}{space 1}{space 1}{ralign 9:{res:{sf: 27593.42}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf: .4224678}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.319266}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.31e+07}}}{space 1}{space 1}{ralign 9:{res:{sf:       15}}}{space 1}{space 1}{ralign 9:{res:{sf:      108}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.0452733}}}{space 1}{space 1}{ralign 9:{res:{sf:  1.00205}}}{space 1}{space 1}{ralign 9:{res:{sf:   395684}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.6226926}}}{space 1}{space 1}{ralign 9:{res:{sf:  2.97301}}}{space 1}{space 1}{ralign 9:{res:{sf:  7916420}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       22}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:  2.31081}}}{space 1}{space 1}{ralign 9:{res:{sf: 21.31239}}}{space 1}{space 1}{ralign 9:{res:{sf:   582838}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       70}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.3259077}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.106216}}}{space 1}{space 1}{ralign 9:{res:{sf:   449158}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 2.861346}}}{space 1}{space 1}{ralign 9:{res:{sf: 9.187303}}}{space 1}{space 1}{ralign 9:{res:{sf:    69791}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf: .1800447}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.603889}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.81e+07}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:      500}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 7.222921}}}{space 1}{space 1}{ralign 9:{res:{sf: 205.1016}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.46e+10}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:  1186802}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       15}}}{space 1}{space 1}{ralign 9:{res:{sf:       17}}}{space 1}{space 1}{ralign 9:{res:{sf:       20}}}{space 1}{space 1}{ralign 9:{res:{sf:       28}}}{space 1}{space 1}{ralign 9:{res:{sf:       41}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:       12}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       25}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       55}}}{space 1}{space 1}{ralign 9:{res:{sf:       69}}}{space 1}{space 1}{ralign 9:{res:{sf:       75}}}{space 1}{space 1}{ralign 9:{res:{sf:       84}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       14}}}{space 1}{space 1}{ralign 9:{res:{sf:       16}}}{space 1}{space 1}{ralign 9:{res:{sf:       16}}}{space 1}{space 1}{ralign 9:{res:{sf:       18}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        3}}}{space 1}{space 1}{ralign 9:{res:{sf:        4}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       45}}}{space 1}{space 1}{ralign 9:{res:{sf:       50}}}{space 1}{space 1}{ralign 9:{res:{sf:       56}}}{space 1}{space 1}{ralign 9:{res:{sf:       70}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 33726.81}}}{space 1}{space 1}{ralign 9:{res:{sf:  49762.5}}}{space 1}{space 1}{ralign 9:{res:{sf: 62017.32}}}{space 1}{space 1}{ralign 9:{res:{sf:  99392.6}}}{space 1}
+
+{com}. esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max") ///
+>                 coeflabels(eduyr "education year" marital "marital status" earn_ad "earning") ///
+>                 title(MUS: 1998-2010\label{c -(}tab:mus9810{c )-}) nonumber noobs  replace
+{res}{txt}(output written to {browse  `"D:\My_Drive\MA_semester04\Tzu\paper\table\desc.tex"'})
+
+{com}. 
+. use "${c -(}wdata{c )-}\mu_ML", clear
+{txt}
+{com}. estpost summarize age gender eduyr kid marital taipei hour earn_ad, detail
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: 36.30602}}}{space 1}{space 1}{ralign 9:{res:{sf: 109.7342}}}{space 1}{space 1}{ralign 9:{res:{sf: 10.47541}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: .5744812}}}{space 1}{space 1}{ralign 9:{res:{sf: .2444537}}}{space 1}{space 1}{ralign 9:{res:{sf: .4944226}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: 11.90516}}}{space 1}{space 1}{ralign 9:{res:{sf: 10.94104}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.307724}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: .4772687}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.020787}}}{space 1}{space 1}{ralign 9:{res:{sf:  1.01034}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: .5813803}}}{space 1}{space 1}{ralign 9:{res:{sf: .2433784}}}{space 1}{space 1}{ralign 9:{res:{sf: .4933339}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: .0930621}}}{space 1}{space 1}{ralign 9:{res:{sf: .0844019}}}{space 1}{space 1}{ralign 9:{res:{sf: .2905201}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: 44.54132}}}{space 1}{space 1}{ralign 9:{res:{sf: 59.34835}}}{space 1}{space 1}{ralign 9:{res:{sf: 7.703788}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf:   219015}}}{space 1}{space 1}{ralign 9:{res:{sf: 38368.24}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.10e+08}}}{space 1}{space 1}{ralign 9:{res:{sf: 20236.74}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf: .3628613}}}{space 1}{space 1}{ralign 9:{res:{sf: 2.380439}}}{space 1}{space 1}{ralign 9:{res:{sf:  7951563}}}{space 1}{space 1}{ralign 9:{res:{sf:       15}}}{space 1}{space 1}{ralign 9:{res:{sf:       65}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.3012863}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.090773}}}{space 1}{space 1}{ralign 9:{res:{sf:   125820}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.4763597}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.658409}}}{space 1}{space 1}{ralign 9:{res:{sf:  2607409}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       22}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 2.126889}}}{space 1}{space 1}{ralign 9:{res:{sf: 7.502474}}}{space 1}{space 1}{ralign 9:{res:{sf:   104529}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       20}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.3299204}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.108847}}}{space 1}{space 1}{ralign 9:{res:{sf:   127331}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:  2.80145}}}{space 1}{space 1}{ralign 9:{res:{sf: 8.848122}}}{space 1}{space 1}{ralign 9:{res:{sf:    20382}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf: -.125976}}}{space 1}{space 1}{ralign 9:{res:{sf: 9.082741}}}{space 1}{space 1}{ralign 9:{res:{sf:  9755218}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:      120}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 4.306973}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.39344}}}{space 1}{space 1}{ralign 9:{res:{sf: 8.40e+09}}}{space 1}{space 1}{ralign 9:{res:{sf: 1053.124}}}{space 1}{space 1}{ralign 9:{res:{sf: 712081.6}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       18}}}{space 1}{space 1}{ralign 9:{res:{sf:       21}}}{space 1}{space 1}{ralign 9:{res:{sf:       23}}}{space 1}{space 1}{ralign 9:{res:{sf:       28}}}{space 1}{space 1}{ralign 9:{res:{sf:       35}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:       12}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       18}}}{space 1}{space 1}{ralign 9:{res:{sf:       35}}}{space 1}{space 1}{ralign 9:{res:{sf:       40}}}{space 1}{space 1}{ralign 9:{res:{sf:       40}}}{space 1}{space 1}{ralign 9:{res:{sf:       44}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 9379.763}}}{space 1}{space 1}{ralign 9:{res:{sf: 17770.41}}}{space 1}{space 1}{ralign 9:{res:{sf: 20828.51}}}{space 1}{space 1}{ralign 9:{res:{sf: 25743.04}}}{space 1}{space 1}{ralign 9:{res:{sf: 34714.19}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       44}}}{space 1}{space 1}{ralign 9:{res:{sf:       51}}}{space 1}{space 1}{ralign 9:{res:{sf:       55}}}{space 1}{space 1}{ralign 9:{res:{sf:       61}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       14}}}{space 1}{space 1}{ralign 9:{res:{sf:       16}}}{space 1}{space 1}{ralign 9:{res:{sf:       16}}}{space 1}{space 1}{ralign 9:{res:{sf:       18}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        2}}}{space 1}{space 1}{ralign 9:{res:{sf:        3}}}{space 1}{space 1}{ralign 9:{res:{sf:        4}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:hour}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       48}}}{space 1}{space 1}{ralign 9:{res:{sf:       50}}}{space 1}{space 1}{ralign 9:{res:{sf:       56}}}{space 1}{space 1}{ralign 9:{res:{sf:       70}}}{space 1}
+{space 0}{space 0}{ralign 12:earn_ad}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 46285.58}}}{space 1}{space 1}{ralign 9:{res:{sf: 59340.14}}}{space 1}{space 1}{ralign 9:{res:{sf: 71081.63}}}{space 1}{space 1}{ralign 9:{res:{sf: 107441.8}}}{space 1}
+
+{com}. esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max") ///
+>                 coeflabels(eduyr "education year" marital "marital status" earn_ad "earning") ///
+>                 title(ML Dataset\label{c -(}tab:train{c )-}) nonumber noobs  append
+{res}{txt}(output written to {browse  `"D:\My_Drive\MA_semester04\Tzu\paper\table\desc.tex"'})
+
+{com}. 
+. 
+. use "${c -(}wdata{c )-}\mu_PD", clear
+{txt}
+{com}. drop if year < 2005
+{txt}(249,517 observations deleted)
+
+{com}. estpost summarize age gender eduyr kid marital taipei, detail
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf: 38.55333}}}{space 1}{space 1}{ralign 9:{res:{sf: 193.8213}}}{space 1}{space 1}{ralign 9:{res:{sf: 13.92197}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf: .5203828}}}{space 1}{space 1}{ralign 9:{res:{sf: .2495854}}}{space 1}{space 1}{ralign 9:{res:{sf: .4995852}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf: 11.72228}}}{space 1}{space 1}{ralign 9:{res:{sf: 13.27434}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.643397}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf: .6077858}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.345902}}}{space 1}{space 1}{ralign 9:{res:{sf:  1.16013}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf: .5450997}}}{space 1}{space 1}{ralign 9:{res:{sf: .2479669}}}{space 1}{space 1}{ralign 9:{res:{sf: .4979627}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf:   286443}}}{space 1}{space 1}{ralign 9:{res:{sf: .0862405}}}{space 1}{space 1}{ralign 9:{res:{sf: .0788034}}}{space 1}{space 1}{ralign 9:{res:{sf: .2807194}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf: .0690593}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.895914}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.10e+07}}}{space 1}{space 1}{ralign 9:{res:{sf:       15}}}{space 1}{space 1}{ralign 9:{res:{sf:       65}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.0815989}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.006658}}}{space 1}{space 1}{ralign 9:{res:{sf:   149060}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.4686081}}}{space 1}{space 1}{ralign 9:{res:{sf: 3.184532}}}{space 1}{space 1}{ralign 9:{res:{sf:  3357764}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       22}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 1.871635}}}{space 1}{space 1}{ralign 9:{res:{sf: 6.037324}}}{space 1}{space 1}{ralign 9:{res:{sf:   174096}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:       15}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:-.1811373}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.032811}}}{space 1}{space 1}{ralign 9:{res:{sf:   156140}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 2.947856}}}{space 1}{space 1}{ralign 9:{res:{sf: 9.689854}}}{space 1}{space 1}{ralign 9:{res:{sf:    24703}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       15}}}{space 1}{space 1}{ralign 9:{res:{sf:       17}}}{space 1}{space 1}{ralign 9:{res:{sf:       20}}}{space 1}{space 1}{ralign 9:{res:{sf:       27}}}{space 1}{space 1}{ralign 9:{res:{sf:       39}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:        6}}}{space 1}{space 1}{ralign 9:{res:{sf:        9}}}{space 1}{space 1}{ralign 9:{res:{sf:       12}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:age}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       50}}}{space 1}{space 1}{ralign 9:{res:{sf:       58}}}{space 1}{space 1}{ralign 9:{res:{sf:       61}}}{space 1}{space 1}{ralign 9:{res:{sf:       65}}}{space 1}
+{space 0}{space 0}{ralign 12:gender}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:eduyr}{space 1}{c |}{space 1}{ralign 9:{res:{sf:       14}}}{space 1}{space 1}{ralign 9:{res:{sf:       16}}}{space 1}{space 1}{ralign 9:{res:{sf:       16}}}{space 1}{space 1}{ralign 9:{res:{sf:       18}}}{space 1}
+{space 0}{space 0}{ralign 12:kid}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        3}}}{space 1}{space 1}{ralign 9:{res:{sf:        3}}}{space 1}{space 1}{ralign 9:{res:{sf:        4}}}{space 1}
+{space 0}{space 0}{ralign 12:marital}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+{space 0}{space 0}{ralign 12:taipei}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        0}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}
+
+{com}. esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max") ///
+>                 coeflabels(eduyr "education year" marital "marital status") ///
+>                 title(Prediction Dataset\label{c -(}tab:prediction{c )-}) nonumber noobs  append
+{res}{txt}(output written to {browse  `"D:\My_Drive\MA_semester04\Tzu\paper\table\desc.tex"'})
+
+{com}. 
+. /**
+> 
+> use "${c -(}wdata{c )-}\mu_00-10", clear
+> estpost summarize age gender eduyr marital city hour earn earn_hr, detail
+> esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max p25 p50 p75") title(MUS: 2000-2010) nonumber replace
+> 
+> use "${c -(}wdata{c )-}\mu_00-07", clear
+> estpost summarize age gender eduyr marital city hour earn earn_hr, detail
+> esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max p25 p50 p75") title(MUS: 2000-2007) nonumber append
+> 
+> use "${c -(}wdata{c )-}\mu_ML", clear
+> estpost summarize age gender eduyr marital city hour earn earn_hr, detail
+> esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max p25 p50 p75") title(Training Data Set and Validation Data Set) nonumber append
+> 
+> 
+> use "${c -(}wdata{c )-}\mu_ML", clear
+> estpost summarize age gender eduyr marital city hour earn earn_hr if treat == 0, detail
+> esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max p25 p50 p75") title(Training Data Set and Validation Data Set: Treatment group) nonumber append
+> 
+> use "${c -(}wdata{c )-}\mu_ML", clear
+> estpost summarize age gender eduyr marital city hour earn earn_hr if treat == 1, detail
+> esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max p25 p50 p75") title(Training Data Set and Validation Data Set: Control group) nonumber append
+> 
+> 
+> use "${c -(}wdata{c )-}\mu_PD", clear
+> estpost summarize age gender eduyr marital city treat, detail
+> esttab using "${c -(}table{c )-}\desc.tex", cells("count mean(fmt(2)) sd(fmt(2)) min max p25 p50 p75") title(Prediction) nonumber append
+> 
+> **/
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\4_describe_statistics.do.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 1 Jul 2023, 16:23:49
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

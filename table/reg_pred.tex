@@ -1,0 +1,34 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+            &\multicolumn{1}{c}{Employment}&\multicolumn{1}{c}{Hour}&\multicolumn{1}{c}{Earning}&\multicolumn{1}{c}{Employment}&\multicolumn{1}{c}{Hour}&\multicolumn{1}{c}{Earning}\\
+\hline
+DiD         &      0.0103\sym{*}  &      -0.638\sym{***}&       726.9\sym{**} &     0.00923\sym{*}  &      -0.595\sym{***}&       489.4\sym{*}  \\
+            &   (0.00415)         &     (0.144)         &     (228.7)         &   (0.00411)         &     (0.144)         &     (226.0)         \\
+[1em]
+age         &                     &                     &                     &   -0.000283\sym{*}  &     -0.0412\sym{***}&       192.1\sym{***}\\
+            &                     &                     &                     &  (0.000115)         &   (0.00386)         &     (6.051)         \\
+[1em]
+eduyr       &                     &                     &                     &    -0.00975\sym{***}&      -0.285\sym{***}&       683.3\sym{***}\\
+            &                     &                     &                     &  (0.000453)         &    (0.0160)         &     (25.14)         \\
+[1em]
+gender      &                     &                     &                     &     -0.0697\sym{***}&      -0.537\sym{***}&      3049.1\sym{***}\\
+            &                     &                     &                     &   (0.00251)         &    (0.0790)         &     (123.9)         \\
+[1em]
+marital     &                     &                     &                     &      0.0893\sym{***}&      -0.213\sym{*}  &      2555.6\sym{***}\\
+            &                     &                     &                     &   (0.00322)         &    (0.0844)         &     (132.4)         \\
+[1em]
+kid         &                     &                     &                     &     -0.0530\sym{***}&       0.148\sym{***}&      -648.1\sym{***}\\
+            &                     &                     &                     &   (0.00127)         &    (0.0404)         &     (63.39)         \\
+[1em]
+taipei      &                     &                     &                     &      -0.106\sym{***}&      -0.712\sym{***}&      2466.4\sym{***}\\
+            &                     &                     &                     &   (0.00412)         &     (0.132)         &     (206.4)         \\
+\hline
+\(N\)       &      192244         &       90757         &       90757         &      192244         &       90757         &       90757         \\
+\hline\hline
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

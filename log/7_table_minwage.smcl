@@ -1,0 +1,122 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\7_table_minwage.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}30 Jun 2023, 23:57:21
+{txt}
+{com}. 
+. 
+. use "${c -(}rdata{c )-}\minw.dta", clear
+{txt}
+{com}. 
+. graph twoway (scatter minimumwagemonth year, msymbol(circle_hollow) mcolor(black)) ///
+>         (scatter minimumwagemonth year if year == 2007), ///
+>         ytitle("Minimum wage (monthly)") xtitle("Year") ///
+>         xlabel(1965(5)2025, labsize(*0.75)) ylabel(,labsize(*0.75)) ///
+>         legend(off) graphregion(color(white))
+{res}{txt}
+{com}. graph export "${c -(}pic{c )-}\minw_mon.png", replace
+{txt}{p 0 4 2}
+(file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\pic\minw_mon.png{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\pic\minw_mon.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. drop if year < 1992
+{txt}(24 observations deleted)
+
+{com}. graph twoway (scatter minimumwagehour year, msymbol(circle_hollow) mcolor(black)) ///
+>         (scatter minimumwagehour year if year == 2007), ///
+>         ytitle("Minimum wage (hourly)") xtitle("Year") ///
+>         xlabel(1990(5)2025, labsize(*0.75)) ylabel(,labsize(*0.75)) ///
+>         legend(off) graphregion(color(white))
+{res}{txt}
+{com}. graph export "${c -(}pic{c )-}\minw_hr.png", replace
+{txt}{p 0 4 2}
+(file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\pic\minw_hr.png{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\pic\minw_hr.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. estpost tabstat minimumwagemonth minimumwagehour, by(year)
+
+{txt}Summary statistics: Mean
+     for variables: minimumwagemonth minimumwagehour
+  by categories of: year
+
+{space 0}{space 0}{ralign 12:year}{space 1}{c |}{space 1}{ralign 9:e(minim~)}{space 1}{space 1}{ralign 9:e(minim~)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:1992}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    12365}}}{space 1}{space 1}{ralign 9:{res:{sf:       52}}}{space 1}
+{space 0}{space 0}{ralign 12:1993}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    13350}}}{space 1}{space 1}{ralign 9:{res:{sf:       56}}}{space 1}
+{space 0}{space 0}{ralign 12:1994}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    14010}}}{space 1}{space 1}{ralign 9:{res:{sf:       59}}}{space 1}
+{space 0}{space 0}{ralign 12:1995}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    14880}}}{space 1}{space 1}{ralign 9:{res:{sf:       62}}}{space 1}
+{space 0}{space 0}{ralign 12:1996}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15360}}}{space 1}{space 1}{ralign 9:{res:{sf:       64}}}{space 1}
+{space 0}{space 0}{ralign 12:1997}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:1998}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:1999}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2000}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2001}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2002}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2003}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2004}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2005}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2006}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    15840}}}{space 1}{space 1}{ralign 9:{res:{sf:       66}}}{space 1}
+{space 0}{space 0}{ralign 12:2007}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    17280}}}{space 1}{space 1}{ralign 9:{res:{sf:       95}}}{space 1}
+{space 0}{space 0}{ralign 12:2008}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    17280}}}{space 1}{space 1}{ralign 9:{res:{sf:       95}}}{space 1}
+{space 0}{space 0}{ralign 12:2009}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    17280}}}{space 1}{space 1}{ralign 9:{res:{sf:       95}}}{space 1}
+{space 0}{space 0}{ralign 12:2010}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    17280}}}{space 1}{space 1}{ralign 9:{res:{sf:       95}}}{space 1}
+{space 0}{space 0}{ralign 12:2011}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    17880}}}{space 1}{space 1}{ralign 9:{res:{sf:       98}}}{space 1}
+{space 0}{space 0}{ralign 12:2012}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    18780}}}{space 1}{space 1}{ralign 9:{res:{sf:      103}}}{space 1}
+{space 0}{space 0}{ralign 12:2013}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    19047}}}{space 1}{space 1}{ralign 9:{res:{sf:      109}}}{space 1}
+{space 0}{space 0}{ralign 12:2014}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    19273}}}{space 1}{space 1}{ralign 9:{res:{sf:      115}}}{space 1}
+{space 0}{space 0}{ralign 12:2015}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    20008}}}{space 1}{space 1}{ralign 9:{res:{sf:      120}}}{space 1}
+{space 0}{space 0}{ralign 12:2016}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    20008}}}{space 1}{space 1}{ralign 9:{res:{sf:      126}}}{space 1}
+{space 0}{space 0}{ralign 12:2017}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    21009}}}{space 1}{space 1}{ralign 9:{res:{sf:      133}}}{space 1}
+{space 0}{space 0}{ralign 12:2018}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    22000}}}{space 1}{space 1}{ralign 9:{res:{sf:      140}}}{space 1}
+{space 0}{space 0}{ralign 12:2019}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23100}}}{space 1}{space 1}{ralign 9:{res:{sf:      150}}}{space 1}
+{space 0}{space 0}{ralign 12:2020}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    23800}}}{space 1}{space 1}{ralign 9:{res:{sf:      158}}}{space 1}
+{space 0}{space 0}{ralign 12:2021}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    24000}}}{space 1}{space 1}{ralign 9:{res:{sf:      160}}}{space 1}
+{space 0}{space 0}{ralign 12:2022}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    25250}}}{space 1}{space 1}{ralign 9:{res:{sf:      168}}}{space 1}
+{space 0}{space 0}{ralign 12:2023}{space 1}{c |}{space 1}{ralign 9:{res:{sf:    26400}}}{space 1}{space 1}{ralign 9:{res:{sf:      176}}}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:Total}{space 1}{c |}{space 1}{ralign 9:{res:{sf: 18063.75}}}{space 1}{space 1}{ralign 9:{res:{sf: 96.53125}}}{space 1}
+
+{com}. esttab using "${c -(}table{c )-}\minw.tex", cells("minimumwagemonth minimumwagehour") noobs ///
+> nonumber varlabels(`e(labels)')  ///
+> drop(Total) varwidth(30) title(Minimum wage from 1992 to 2023 in Taiwan\label{c -(}tab:minw{c )-}) ///
+>  collab("Min. wage (month)" "Min. wage (hour)", lhs("year")) tex replace
+{res}{txt}{p 0 4 2}
+(file {bf}
+D:\My_Drive\MA_semester04\Tzu\paper\table\minw.tex{rm}
+not found)
+{p_end}
+(output written to {browse  `"D:\My_Drive\MA_semester04\Tzu\paper\table\minw.tex"'})
+
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}D:\My_Drive\MA_semester04\Tzu\paper\log\7_table_minwage.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}30 Jun 2023, 23:57:42
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
